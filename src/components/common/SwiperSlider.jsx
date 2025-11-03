@@ -87,14 +87,14 @@ export default function SwiperSlider({ slides }) {
 
             <div className="author_block flex justify-between flex items-end mt-[80px]">
                 <div className="author_pic_name flex justify-between flex items-center gap-4">
-                    <img src='/public/Ellipse 39.png' />
+                    <img src='/Ellipse 39.png' />
                     <div className="author_data pl-4">
                       <h3 className='mb-2'>John Doe</h3>
                       <p className='text-sm'>CTO, Ailitic<br/>
                       Bangalore, India</p>
                     </div>
                 </div>
-                <img src='/public/image 835.png' className='border border-[#D5D6D8] border-solid rounded-[50px] p-2 w-[110px]' />
+                <img src='/image 835.png' className='border border-[#D5D6D8] border-solid rounded-[50px] p-2 w-[110px]' />
             </div>
 
           </div>
