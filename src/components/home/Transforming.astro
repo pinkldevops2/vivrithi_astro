@@ -3,10 +3,10 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 ---
 <div class="bg-white w-full xl:px-0 md:px-[40px] md:pt-[70px] pt-[40px] px-[20px]">
 <div class="container mx-auto">
-  <div class="flex flex-wrap -mx-2">
-    <div class="w-full md:w-1/2 px-2">
+  <div class="flex flex-wrap">
+    <div class="w-full md:w-1/2 md:pr-15">
       <!-- Column 1 content -->
-      <div class="px-0 md:px-4 pb-15 md:pb-0">
+      <div class="px-0 pb-15 md:pb-0">
 
     <!-- Paragraph -->
     <div data-reveal class="fade-up pt-[25px] flex justify-start flex-col items-start">
@@ -32,40 +32,87 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     </div>
     <div class="w-full flex md:w-1/2 px-2">
       
-      <div data-reveal class="fade-up banner_sub_grid">
-        <div class="banner_sub_grid_item active banner_sub_grid_item1 relative left-padding-zero">
-                <div class="number_fill text-sm">01</div>
+      <ul class="grid grid-cols-1 grid-cols-2 w-full max-w-3xl banner_sub_grid">
+    <!-- Card 1 -->
+    <li class="group [perspective:1000px] top_no_padding left_no_padding">
+      <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
+          <div class="number_fill text-sm">01</div>
                 <div class="content_fill">
                     <h3 class="text-lg uppercase">Invest</h3>
-                    <div class="mt-2 desc">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
                 </div>
-                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto" />
         </div>
-        <div class="banner_sub_grid_item banner_sub_grid_item2 relative border-right-0">
-                <div class="number_fill text-sm">02</div>
-                <div class="content_fill">
-                    <h3 class="text-lg uppercase">Borrow</h3>
-                    <div class="mt-2 desc">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
+        <div class="absolute inset-0 flex flex-col items-start justify-between text-white [transform:rotateY(180deg)] [backface-visibility:hidden] banner_sub_grid_item_bg p-4">
+          <div class="number_fill text-sm">01</div>
+                <div class="content_fill text-left">
+                    <h3 class="text-lg uppercase">Invest</h3>
+                    <div class="mt-2 desc text-sm md:text-lg">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
                 </div>
-                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto" />
-        </div>
-        <div class="banner_sub_grid_item banner_sub_grid_item3 relative border-bottom-0 left-padding-zero">
-                <div class="number_fill text-sm">03</div>
-                <div class="content_fill">
-                    <h3 class="text-lg uppercase">Strategize</h3>
-                    <div class="mt-2 desc">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
-                </div>
-                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto" />
-        </div>
-        <div class="banner_sub_grid_item banner_sub_grid_item4 relative border-right-0 border-bottom-0">
-                <div class="number_fill text-sm">04</div>
-                <div class="content_fill">
-                    <h3 class="text-lg uppercase">Tech</h3>
-                    <div class="mt-2 desc">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
-                </div>
-                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto" />
+                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto absolute right-2 top-2" />
         </div>
       </div>
+    </li>
+
+    <!-- Card 2 -->
+    <li class="group [perspective:1000px] right_no_padding top_no_padding right_no_border">
+      <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
+          <div class="number_fill text-sm">02</div>
+                <div class="content_fill">
+                    <h3 class="text-lg uppercase">Borrow</h3>
+                </div>
+        </div>
+        <div class="absolute inset-0 flex flex-col items-start justify-between text-white [transform:rotateY(180deg)] [backface-visibility:hidden] banner_sub_grid_item_bg p-4">
+          <div class="number_fill text-sm">02</div>
+                <div class="content_fill text-left">
+                    <h3 class="text-lg uppercase">Borrow</h3>
+                    <div class="mt-2 desc text-sm md:text-lg">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
+                </div>
+                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto absolute right-2 top-2"/>
+        </div>
+      </div>
+    </li>
+
+    <!-- Card 3 -->
+    <li class="group [perspective:1000px] left_no_padding bottom_no_border">
+      <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
+          <div class="number_fill text-sm">03</div>
+                <div class="content_fill">
+                    <h3 class="text-lg uppercase">Strategize</h3>
+                </div>
+        </div>
+        <div class="absolute inset-0 flex flex-col items-start justify-between text-white [transform:rotateY(180deg)] [backface-visibility:hidden] banner_sub_grid_item_bg p-4">
+         <div class="number_fill text-sm">03</div>
+                <div class="content_fill text-left">
+                    <h3 class="text-lg uppercase">Strategize</h3>
+                    <div class="mt-2 desc text-sm md:text-lg">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
+                </div>
+                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto absolute right-2 top-2"/>
+        </div>
+      </div>
+    </li>
+
+    <!-- Card 4 -->
+    <li class="group [perspective:1000px] right_no_padding right_no_border bottom_no_border">
+      <div class="flip-inner relative h-64 w-full text-center transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+        <div class="absolute inset-0 flex flex-col items-start justify-between rounded-xl text-xl font-semibold [backface-visibility:hidden]">
+          <div class="number_fill text-sm">04</div>
+                <div class="content_fill">
+                    <h3 class="text-lg uppercase">Tech</h3>
+                </div>
+        </div>
+        <div class="absolute inset-0 flex flex-col items-start justify-between text-white [transform:rotateY(180deg)] [backface-visibility:hidden] banner_sub_grid_item_bg p-4">
+          <div class="number_fill text-sm">04</div>
+                <div class="content_fill text-left">
+                    <h3 class="text-lg uppercase">Tech</h3>
+                    <div class="mt-2 desc text-sm md:text-lg">Access the right funding, at the right time, with tailored structures to scale your business seamlessly.</div>
+                </div>
+                <img src={LogoShape.src} alt="Vivrithi" class="w-[50px] h-auto absolute right-2 top-2"/>
+        </div>
+      </div>
+    </li>
+  </ul>
 
 
     </div>
@@ -78,41 +125,45 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
     display: flex;
     font-size: 14px;
 }
-.banner_sub_grid{
-    width: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-}
-.banner_sub_grid_item{
+
+.banner_sub_grid li{
     border-right: dashed 1px #F58220;
     border-bottom: dashed 1px #F58220;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 25px;
-    min-height: 250px;
+    padding: 15px;
     transition: 0.3s ease-in all;
+}
+.bottom_no_border{
+    border-bottom:none!important;
+}
+.right_no_border{
+    border-right:none!important;
 }
 .banner_sub_grid_item3, .banner_sub_grid_item4{
     min-height: 275px;
 }
-.banner_sub_grid_item::before{
-    content: '';
-    position: absolute;
+.banner_sub_grid_item_bg{
     background: #3BBAE2;
     background: linear-gradient(32deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
-    left: -15px;
-    top: -15px;
-    right: 15px;
-    bottom: 15px;
-    z-index: 1;
-    opacity: 0;
-    transition: 0.3s ease-in all;
 }
 .banner_sub_grid_item2::before{
     left: 15px;
     top: -15px;
     right: -15px;
+}
+.left_no_padding{
+  padding-left: 0px!important;
+}
+.top_no_padding{
+  padding-top: 0px!important;
+}
+.right_no_padding{
+  padding-right: 0px!important;
+}
+.bottom_no_padding{
+  padding-bottom: 0px!important;
 }
 .banner_sub_grid_item2 img{
     right: 10px!important;
@@ -176,41 +227,22 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 }
 </style>
 <script>
-  // Run this only in the browser
-  if (typeof window !== "undefined") {
-    const items = document.querySelectorAll(".banner_sub_grid_item");
-    let current = 0;
-    let interval;
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".flip-inner");
+      let current = 0;
 
-    // Function to activate an item
-    const activateItem = (index) => {
-      items.forEach((item, i) => {
-        item.classList.toggle("active", i === index);
-      });
-      current = index;
-    };
+      // Flip the first card initially
+      cards[current].style.transform = "rotateY(180deg)";
 
-    // Auto rotation function
-    const startRotation = () => {
-      interval = setInterval(() => {
-        current = (current + 1) % items.length;
-        activateItem(current);
-      }, 5000); // 5 seconds
-    };
+      setInterval(() => {
+        // Unflip all cards
+        cards.forEach(card => card.style.transform = "rotateY(0deg)");
 
-    // Stop rotation when hovering, and immediately activate hovered item
-    items.forEach((item, index) => {
-      item.addEventListener("mouseenter", () => {
-        clearInterval(interval);
-        activateItem(index);
-      });
-      item.addEventListener("mouseleave", () => {
-        startRotation();
-      });
+        // Move to next card
+        current = (current + 1) % cards.length;
+
+        // Flip the next one
+        cards[current].style.transform = "rotateY(180deg)";
+      }, 5000); // every 5 seconds
     });
-
-    // Initial activation and start rotation
-    activateItem(0);
-    startRotation();
-  }
-</script>
+  </script>
