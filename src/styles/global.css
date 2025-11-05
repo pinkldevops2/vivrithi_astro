@@ -527,3 +527,43 @@ body{
   width: 1000px;
   left: -1000px;
 }
+.logoanim path {
+  fill: none;
+  stroke: url(#paint0_linear_603_887); /* use gradient */
+  stroke-width: 1.5;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: draw 10s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4000;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 4000;
+  }
+}
+.logoanim2 path {
+  fill: none;
+  stroke: url(#paint0_linear_603_8872); /* use gradient */
+  stroke-width: 1.5;
+  stroke-dasharray: 4000;
+  stroke-dashoffset: 4000;
+  animation: draw 10s ease-in-out infinite;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4000;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 4000;
+  }
+}
