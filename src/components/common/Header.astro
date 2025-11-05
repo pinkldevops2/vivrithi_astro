@@ -4,8 +4,8 @@ import vivrithiLogo from "../../../public/Vivrithi-NEXT.svg";
 import LogoShape from "../../../public/Vivrithi_logo.svg";
 ---
 
-<header class="bg-white relative z-50">
-  <div class="container mx-auto flex items-center justify-between py-4 px-6 pt-[30px]">
+<header id="mainHeader" class="bg-white sticky top-0 w-full z-50 transition-transform duration-500">
+  <div class="container mx-auto flex items-center justify-between py-4 px-4 pt-[30px]">
     <!-- Logo -->
     <div class="flex items-center space-x-3">
       <img src={vivrithiLogo.src} alt="Vivrithi Logo" class="min-w-[180px] w-auto" />
@@ -14,13 +14,13 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
     <!-- Mobile Menu Button -->
     <button 
       id="menu-btn"
-      class="lg:hidden flex flex-col justify-center items-center w-10 h-10 space-y-1.5"
+      class="lg:hidden flex flex-col justify-center items-center w-12 h-12 space-y-1.5"
       aria-label="Toggle menu"
-      onclick="document.getElementById('mobileMenu').classList.toggle('hidden')"
+      onclick="document.getElementById('mobileMenu').classList.toggle('hidden'); this.classList.toggle('active')"
     >
-      <span class="w-6 h-[2px] bg-gray-700"></span>
-      <span class="w-6 h-[2px] bg-gray-700"></span>
-      <span class="w-6 h-[2px] bg-gray-700"></span>
+      <span class="w-6 h-[2px] bg-gray-700 bar"></span>
+      <span class="w-6 h-[2px] bg-gray-700 bar"></span>
+      <span class="w-6 h-[2px] bg-gray-700 bar"></span>
     </button>
 
     <!-- Navigation -->
@@ -103,4 +103,48 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
     #headenvan li:first-child a{
         padding-left:0px;
     }
+    /* Hamburger active (X animation) */
+    #menu-btn.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px)!important;
+    }
+    #menu-btn.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    #menu-btn.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px)!important;
+    }
+
 </style>
+<script>
+  let lastScroll = 0;
+  const header = document.getElementById("mainHeader");
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    // Always visible near top
+    if (currentScroll <= 0) {
+      header.classList.remove("hide");
+      header.classList.add("show");
+      return;
+    }
+
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      // Scrolling down
+      header.classList.remove("show");
+      header.classList.add("hide");
+    } else if (currentScroll < lastScroll) {
+      // Scrolling up
+      header.classList.remove("hide");
+      header.classList.add("show");
+    }
+
+    lastScroll = currentScroll;
+  });
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobileMenu");
+    const btn = document.getElementById("menu-btn");
+    menu.classList.toggle("hidden");
+    btn.classList.toggle("active");
+  }
+</script>
