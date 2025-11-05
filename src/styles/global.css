@@ -503,6 +503,9 @@ body{
   .content2  p,  .content3  p{
     text-align: center;
   }
+  .ftiso_holder::after{
+    display: none;
+  }
 }
 .fade-up {
   opacity: 0;
@@ -513,4 +516,14 @@ body{
 .fade-up.revealed {
   opacity: 1;
   transform: translateY(0);
+}
+.ftiso_holder::after{
+  content: '';
+  position:absolute;
+  background-color: #F8F8F8;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1000px;
+  left: -1000px;
 }
