@@ -535,7 +535,19 @@ body{
   stroke-dashoffset: 4000;
   animation: draw 10s ease-in-out infinite;
 }
-
+.tab2 span, .tab span{
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+.tab-active2 span, .tab-active span{
+  opacity: 1;
+  font-size: 18px;
+  line-height: 18px;
+}
+.tab-active2, .tab-active{
+  line-height: 45px;
+}
 @keyframes draw {
   0% {
     stroke-dashoffset: 4000;

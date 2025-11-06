@@ -6,7 +6,7 @@
     </p>
 
     <!-- Gradient main title -->
-    <h2 class="font-heading font-[400] text-[35px] leading-[120%] bg-gradient-to-r from-[#00018A] to-[#3BBAE2] text-transparent bg-clip-text mb-6">
+    <h2 class="font-heading font-[400] text-[35px] leading-[120%] gradient-text mb-6">
       Tailored capital designed <br />
       for every business need
     </h2>
@@ -28,26 +28,31 @@
     </div>
 
     <!-- Tabs Section -->
-    <div class="flex flex-col md:flex-row items-start relative">
+    <div class="flex flex-col md:flex-row items-start relative md:pt-10">
       <!-- Left: Tabs -->
       <div
-        class="tab-title-hold flex md:flex-col flex-row md:w-[220px] mt-[50px] mb-[20px] justify-between md:items-end pr-4 md:pr-0 md:mr-4"
+        class="tab-title-hold flex md:flex-col flex-row md:w-[220px] gap-6 mt-[50px] mb-[20px] justify-between md:items-end pr-4 md:pr-0 md:mr-4"
         style="align-self: stretch;"
       >
         <button class="tab2 font-poppins text-right text-[35px] leading-[120%] tab-active2" data-index="0">
           ₹10,000+
+          <span>AUM(CR)</span>
         </button>
         <button class="tab2 font-poppins text-right text-[18px] leading-[120%] text-[#4B4B4B]" data-index="1">
           ₹47,500+
+          <span>Investors</span>
         </button>
         <button class="tab2 font-poppins text-right text-[18px] leading-[120%] text-[#4B4B4B]" data-index="2">
           12+
+          <span>Years Experience</span>
         </button>
         <button class="tab2 font-poppins text-right text-[18px] leading-[120%] text-[#4B4B4B]" data-index="3">
           500+
+          <span>Partners</span>
         </button>
         <button class="tab2 font-poppins text-right text-[18px] leading-[120%] text-[#4B4B4B]" data-index="4">
           55+
+          <span>Countries</span>
         </button>
       </div>
 
@@ -61,9 +66,6 @@
         <div class="tab-content w-full">
           <!-- 1 -->
           <div class="content2 active">
-            <p class="font-inter uppercase text-[18px] leading-[24px] tracking-[0.07em] mb-3 gradient-text text-left">
-              AUM(CR)
-            </p>
             <div class="image-wrapper">
               <img src="/AUM.png" alt="AUM Image" />
             </div>
@@ -71,9 +73,6 @@
 
           <!-- 2 -->
           <div class="content2 hidden">
-            <p class="font-inter uppercase text-[18px] leading-[24px] tracking-[0.07em] mb-3 gradient-text text-left">
-              Investors
-            </p>
             <div class="image-wrapper">
               <img src="/Manufacturing-Units.png" alt="Investors" />
             </div>
@@ -81,9 +80,6 @@
 
           <!-- 3 -->
           <div class="content2 hidden">
-            <p class="font-inter uppercase text-[18px] leading-[24px] tracking-[0.07em] mb-3 gradient-text text-left">
-              Years Experience
-            </p>
             <div class="image-wrapper">
               <img src="/AUM.png" alt="Experience" />
             </div>
@@ -91,9 +87,6 @@
 
           <!-- 4 -->
           <div class="content2 hidden">
-            <p class="font-inter uppercase text-[18px] leading-[24px] tracking-[0.07em] mb-3 gradient-text text-left">
-              Partners
-            </p>
             <div class="image-wrapper">
               <img src="/AUM.png" alt="Partners" />
             </div>
@@ -101,9 +94,6 @@
 
           <!-- 5 -->
           <div class="content2 hidden">
-            <p class="font-inter uppercase text-[18px] leading-[24px] tracking-[0.07em] mb-3 gradient-text text-left">
-              Countries
-            </p>
             <div class="image-wrapper">
               <img src="/AUM.png" alt="Countries" />
             </div>
@@ -153,17 +143,17 @@
       });
 
       contents.forEach((c, i) => {
-        const title = c.querySelector(".gradient-text");
+        //const title = c.querySelector(".gradient-text");
         const imgWrap = c.querySelector(".image-wrapper");
         if (i === index) {
           c.classList.remove("hidden");
           requestAnimationFrame(() => {
-            title.classList.add("fade-in");
+            //title.classList.add("fade-in");
             imgWrap.classList.add("fade-in");
           });
         } else {
           c.classList.add("hidden");
-          title.classList.remove("fade-in");
+          //title.classList.remove("fade-in");
           imgWrap.classList.remove("fade-in");
         }
       });

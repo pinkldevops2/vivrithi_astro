@@ -225,24 +225,43 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 .left-padding-zero::before{
     left: 0px!important;
 }
+.auto-flipped {
+  transform: rotateY(180deg) !important;
+}
+
 </style>
 <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const cards = document.querySelectorAll(".flip-inner");
-      let current = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".flip-inner");
+  let current = -1;
+  let interval;
 
-      // Flip the first card initially
-      cards[current].style.transform = "rotateY(180deg)";
+  const flipNext = () => {
+    // Remove auto flip from all
+    cards.forEach(card => card.classList.remove("auto-flipped"));
 
-      setInterval(() => {
-        // Unflip all cards
-        cards.forEach(card => card.style.transform = "rotateY(0deg)");
+    // Move to next card
+    current = (current + 1) % cards.length;
 
-        // Move to next card
-        current = (current + 1) % cards.length;
+    // Skip if hovered (so hover always takes priority)
+    const hovered = document.querySelector(".group:hover .flip-inner");
+    if (hovered) return;
 
-        // Flip the next one
-        cards[current].style.transform = "rotateY(180deg)";
-      }, 5000); // every 5 seconds
+    // Flip next card automatically
+    cards[current].classList.add("auto-flipped");
+  };
+
+  // Start flipping every 5 seconds
+  interval = setInterval(flipNext, 5000);
+
+  // Pause auto flipping while any card is hovered
+  cards.forEach(card => {
+    card.closest(".group").addEventListener("mouseenter", () => {
+      clearInterval(interval);
     });
-  </script>
+    card.closest(".group").addEventListener("mouseleave", () => {
+      interval = setInterval(flipNext, 5000);
+    });
+  });
+});
+</script>
