@@ -12,7 +12,7 @@
   --font-heading: "Poppins", sans-serif;
 }
 body{
-  font-size: 17px;
+  font-size: 18px;
   color:#1B1B1B;
   line-height:24px;
 }
@@ -412,6 +412,17 @@ body{
   width: 100%;
   opacity: 1;
 }
+.blog_card.vartical-blog::after{
+  left: initial;
+  width: 100%;
+  height: 70%;
+  background: initial;
+}
+.blog_card:hover::after{
+  height: 100%;
+  opacity: 1;
+}
+
 .blog_card .blog_body, .blog_card .blog_image{
   position: relative;
   z-index: 2;
@@ -420,6 +431,7 @@ body{
 .blog_card:hover .blog_body{
   color: #fff;
 }
+
 .blog_card:hover .blog_body .gradient-text{
   background: linear-gradient(90deg, #ffffff, #3BBAE2);
   -webkit-background-clip: text;
@@ -427,6 +439,17 @@ body{
 }
 .blog_card:hover .blog_body svg path{
   fill: white;
+}
+.blog_card.vartical-blog:hover .gradient-text{
+  background: initial;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+}
+.blog_card.vartical-blog:hover svg path{
+  fill: initial;
+}
+.blog_card.vartical-blog:hover .blog_body{
+  color: initial;
 }
 .textimonials .swiper-slide-next, .textimonials .swiper-slide:hover{
   background-color: #9797970f!important;
