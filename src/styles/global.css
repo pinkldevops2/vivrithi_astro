@@ -407,6 +407,7 @@ body{
   display: block;
   transition: all 0.4s ease-in-out;
   opacity: 0;
+  inset: 0px 0 0px 0px;
 }
 .blog_card:hover::after{
   width: 100%;
