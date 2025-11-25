@@ -70,9 +70,6 @@ from milestones to<br/>market moves
   </div>
 </div>
 </div>
-<style>
-
-</style>
 <script>
   import $ from "jquery";
   import "slick-carousel";
@@ -94,67 +91,17 @@ from milestones to<br/>market moves
     });
 
     $slider.slick({
-  dots: true,
-  arrows: false, // desktop hides arrows
-  infinite: true, // autoplay infinite continues
-  speed: 600,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 3500,
-  fade: true,
-  cssEase: "ease-in-out",
-
-  /* nextArrow: `
-    <button type="button" class="slick-next custom-arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="12" viewBox="0 0 44 12" fill="none">
-        <path d="M43.5987 5.05444C43.8915 5.35073 43.8915 5.82561 43.5987 6.1151L38.826 10.8327C38.5331 11.1222 38.0583 11.1166 37.7654 10.8204C37.4725 10.5241 37.4725 10.0492 37.7654 9.75969L42.0078 5.5663L37.7654 1.27441C37.4725 0.978116 37.4725 0.503243 37.7654 0.21375C38.0583 -0.0757439 38.5331 -0.0702313 38.826 0.226062L43.5987 5.05444ZM-0.000825914 5.07861L-0.000825914 4.32861L43.0684 4.82861L43.0684 5.57861L43.0684 6.32861L-0.000825914 5.82861L-0.000825914 5.07861Z" fill="#666666"/>
-      </svg>
-    </button>
-  `,
-
-  prevArrow: `
-    <button type="button" class="slick-prev custom-arrow">
-      <svg xmlns="http://www.w3.org/2000/svg" width="44" height="12" viewBox="0 0 44 12" fill="none" style="transform:rotate(180deg)">
-        <path d="M43.5987 5.05444C43.8915 5.35073 43.8915 5.82561 43.5987 6.1151L38.826 10.8327C38.5331 11.1222 38.0583 11.1166 37.7654 10.8204C37.4725 10.5241 37.4725 10.0492 37.7654 9.75969L42.0078 5.5663L37.7654 1.27441C37.4725 0.978116 37.4725 0.503243 37.7654 0.21375C38.0583 -0.0757439 38.5331 -0.0702313 38.826 0.226062L43.5987 5.05444ZM-0.000825914 5.07861L-0.000825914 4.32861L43.0684 4.82861L43.0684 5.57861L43.0684 6.32861L-0.000825914 5.82861L-0.000825914 5.07861Z" fill="#666666"/>
-      </svg>
-    </button>
-  `,
-
-  responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-        arrows: true,
-        dots: false
-      }
-    }
-  ] */
-});
-
-
-
-$slider.on("afterChange", function(event, slick, current){
-  const $prev = $(".slick-prev svg path");
-  const $next = $(".slick-next svg path");
-
-  if (current === 0) {
-    $prev.css("opacity", 0.3);
-    $prev.css("pointer-events", "none");
-  } else {
-    $prev.css("opacity", 1);
-    $prev.css("pointer-events", "auto");
-  }
-
-  if (current === slick.slideCount - 1) {
-    $next.css("opacity", 0.3);
-    $next.css("pointer-events", "none");
-  } else {
-    $next.css("opacity", 1);
-    $next.css("pointer-events", "auto");
-  }
-});
-
+      dots: true,
+      arrows: true,
+      infinite: true,
+      speed: 600,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3500,
+      fade: true,
+      cssEase: "ease-in-out",
+    });
 
     function animateOverlay($slide) {
       const $overlay = $slide.find(".overlay");
@@ -179,6 +126,7 @@ $slider.on("afterChange", function(event, slick, current){
   width: 100%;
   max-width: 900px;
   margin: auto;
+  overflow: hidden;
 }
 
 .slide {
@@ -254,44 +202,7 @@ $slider.on("afterChange", function(event, slick, current){
     padding: 30px;
   }
 }
-@media (max-width: 768px) {
-  .slick-prev:before,
-.slick-next:before {
-  display: none !important;
-  content: "" !important;
-}
-  .slick-slider {
-    position: relative;
-  }
 
-  .slick-prev,
-  .slick-next {
-    position: absolute;
-    top:initial;
-    bottom: 15px;
-    z-index: 30;
-    background: none !important;
-    border: none;
-    width: 44px;
-    height: 20px;
-  }
-
-  /* Center both arrows horizontally */
-  .slick-prev {
-    left: 50%;
-    transform: translateX(-60px); /* move left arrow slightly left */
-  }
-
-  .slick-next {
-    left: 50%;
-    transform: translateX(10px);  /* move right arrow slightly right */
-  }
-
-  .custom-arrow svg {
-    width: 44px;
-    height: 12px;
-  }
-}
 @media (max-width: 575px) {
   .overlay {
     padding: 20px;
