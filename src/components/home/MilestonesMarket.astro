@@ -3,7 +3,7 @@
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 ---
-<div class="bg-white w-full xl:px-0 md:px-[40px] md:py-[70px] py-[40px] px-[20px]">
+<div class="bg-white w-full xl:px-0 md:px-[40px] md:py-[70px] py-[40px] pb-14 px-[20px]">
   <div data-reveal class="fade-up container mx-auto">
   <div class="flex flex-wrap md:items-center items-start">
     <div class="w-full md:w-1/2 md:pr-12 flex items-center p-0">
@@ -20,7 +20,7 @@ from milestones to<br/>market moves
     </div>
     <div class="w-full flex md:w-1/2 ">
       
-      <div class="slider-container milestones">
+  <div class="slider-container milestones">
   <div class="slick-slider">
     <div class="slide">
       <img src="cover_ins.png" alt="Slide 1" />
@@ -105,7 +105,7 @@ from milestones to<br/>market moves
   fade: true,
   cssEase: "ease-in-out",
 
-  /* nextArrow: `
+  nextArrow: `
     <button type="button" class="slick-next custom-arrow">
       <svg xmlns="http://www.w3.org/2000/svg" width="44" height="12" viewBox="0 0 44 12" fill="none">
         <path d="M43.5987 5.05444C43.8915 5.35073 43.8915 5.82561 43.5987 6.1151L38.826 10.8327C38.5331 11.1222 38.0583 11.1166 37.7654 10.8204C37.4725 10.5241 37.4725 10.0492 37.7654 9.75969L42.0078 5.5663L37.7654 1.27441C37.4725 0.978116 37.4725 0.503243 37.7654 0.21375C38.0583 -0.0757439 38.5331 -0.0702313 38.826 0.226062L43.5987 5.05444ZM-0.000825914 5.07861L-0.000825914 4.32861L43.0684 4.82861L43.0684 5.57861L43.0684 6.32861L-0.000825914 5.82861L-0.000825914 5.07861Z" fill="#666666"/>
@@ -129,7 +129,7 @@ from milestones to<br/>market moves
         dots: false
       }
     }
-  ] */
+  ]
 });
 
 
@@ -254,48 +254,51 @@ $slider.on("afterChange", function(event, slick, current){
     padding: 30px;
   }
 }
-@media (max-width: 768px) {
-  .slick-prev:before,
-.slick-next:before {
-  display: none !important;
-  content: "" !important;
-}
-  .slick-slider {
-    position: relative;
-  }
 
-  .slick-prev,
-  .slick-next {
-    position: absolute;
-    top:initial;
-    bottom: 15px;
-    z-index: 30;
-    background: none !important;
-    border: none;
-    width: 44px;
-    height: 20px;
-  }
-
-  /* Center both arrows horizontally */
-  .slick-prev {
-    left: 50%;
-    transform: translateX(-60px); /* move left arrow slightly left */
-  }
-
-  .slick-next {
-    left: 50%;
-    transform: translateX(10px);  /* move right arrow slightly right */
-  }
-
-  .custom-arrow svg {
-    width: 44px;
-    height: 12px;
-  }
-}
 @media (max-width: 575px) {
   .overlay {
     padding: 20px;
   }
 }
-
 </style>
+
+<style is:global>
+/* Disable Slick default arrow icons */
+.slick-prev:before,
+.slick-next:before {
+  display: none !important;
+}
+
+/* Mobile Only */
+@media (max-width: 768px) {
+
+  .milestones .slick-prev,
+  .milestones .slick-next {
+    position: absolute;
+    bottom: -30px;
+    top:initial;
+    background: none;
+    border: none;
+    width: 44px;
+    height: 20px;
+    z-index: 9999;
+  }
+
+  /* Position arrows at center */
+  .milestones .slick-prev {
+    left: 50%;
+    transform: translateX(-60px);
+  }
+
+  .milestones .slick-next {
+    left: 50%;
+    transform: translateX(10px);
+  }
+
+  .milestones .custom-arrow svg {
+    width: 44px;
+    height: 12px;
+  }
+}
+</style>
+
