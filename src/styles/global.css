@@ -271,6 +271,9 @@ body{
             width: 100%;
             height:auto;
         }
+        .tab, .tab2 {
+          text-align: center;
+        }
     }
 .testimonials .swiper-slide {
     border: dashed 1px #F58220;
@@ -545,8 +548,10 @@ body{
   }
   .arrow-holder {
     width: calc(100% - 40px);
-    justify-content: space-between;
-    top: -85px;
+    justify-content: center;
+    gap: 20px;
+    top: auto;
+    bottom: -60px;
   }
   #prev,
   #next,
