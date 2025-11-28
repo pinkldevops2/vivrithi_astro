@@ -48,17 +48,17 @@ const slides1 = [
   <div class="container mx-auto">
 <div class="flex justify-center">
 <div
-      class="flex space-x-2 border-1 border-dashed border-[#F58220] max-w-fit mt-[30px] ml-[15px] relative z-2 p-2"
+      class="flex space-x-2 border-1 border-dashed border-[#F58220] max-w-fit mt-[30px] ml-[15px] relative z-2 p-2 mb-4 md:mb-0"
     >
       <button
-        class="tabteam-btn py-3 px-12 text-[21px] font-medium transition-colors duration-300"
+        class="tabteam-btn py-3  px-6 md:px-12 text-[18px] md:text-[21px] font-medium transition-colors duration-300"
         data-tab="directors"
         aria-selected="true"
       >
         Board of Directors
       </button>
       <button
-        class="tabteam-btn py-3 px-12 text-[21px] font-medium transition-colors duration-300"
+        class="tabteam-btn py-3  px-6 md:px-12 text-[18px] md:text-[21px font-medium transition-colors duration-300"
         data-tab="team"
         aria-selected="false"
       >
@@ -77,7 +77,7 @@ const slides1 = [
       id="directors"
       class="tabteam-panel inset-0 transition-all duration-500 ease-out transform opacity-100 translate-y-0"
     >
-      <section class="pb-6">
+      <section class=" pb-16 md:pb-6">
 		<div data-reveal class="fade-up ">
 			<BoardMember slides={slides1} client:only="react" />
 		</div>
@@ -89,7 +89,7 @@ const slides1 = [
       id="team"
       class="tabteam-panel inset-0 transition-all duration-500 ease-out transform opacity-0 -translate-y-2 hidden"
     >
-      <section class="pb-6">
+      <section class="pb-16 md:pb-6">
 		<div data-reveal class="fade-up ">
 			<BoardMember slides={slides1} client:only="react" />
 		</div>

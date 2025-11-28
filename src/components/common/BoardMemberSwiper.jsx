@@ -13,7 +13,7 @@ export default function DrivingImpactSwiper({ slides }) {
   return (
     <div className="container mx-auto  relative w-full">
       {/* Header and Counter */}
-      <div className="flex justify-end flex-col md:flex-row">
+      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-45px] left-1/2 -translate-x-1/2 transform  md:relative md:left-[initial] md:translate-x-[initial] md:bottom-[initial]">
         {/* Navigation */}
         <div className="flex justify-end mb-5 items-center gap-5">
           <button
