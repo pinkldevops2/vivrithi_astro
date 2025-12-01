@@ -1,0 +1,192 @@
+---
+import LogoShape from "../../../public/logowhite.svg";
+---
+
+<div class="w-full xl:px-0 md:px-[40px] md:py-[70px] py-[40px] px-[20px]">
+  <div class="container mx-auto">
+
+    <!-- Heading -->
+    <div class="flex flex-col md:flex-row justify-between md:gap-30">
+      <h2 class="text-[28px] md:text-[35px] font-heading leading-[120%] mb-4 gradient-text w-full md:w-4/12">
+        Growth-ready financing tailored for enterprises
+      </h2>
+      <p class="font-normal text-[17px] w-full md:w-8/12">
+        For mid-market enterprises seeking growth, smoother cash flow, or expansion opportunities, Vivriti Asset Management (VAM) provides structured debt solutions that combine flexibility, predictability, and growth capital.           
+      </p>
+    </div>
+
+    <!-- MOBILE ACCORDION -->
+    <div class="md:hidden mt-6 space-y-4">
+
+      <!-- Accordion Item 1 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Non-Convertible Debentures
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">We provide financing to help mid-market enterprises scale efficiently.</p>
+          <p><strong>Tenor:</strong> 90 days to 1 year</p>
+        </div>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="accordion rounded">
+        <button class="acc-btn w-full py-4 px-4 flex justify-between items-center text-[#F58220] font-medium text-[16px]">
+          Commercial Papers
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="10" viewBox="0 0 16 10" fill="none">
+              <path d="M0.707 0.707L7.707 7.707L14.707 0.707" stroke="#666" stroke-width="2"/>
+            </svg>
+          </span>
+        </button>
+        <div class="acc-content p-5 bg-[#F8F8F8]">
+          <p class="mb-4">Address short-term funding requirements by issuing commercial papers and tapping into diversified, professionally managed capital. Ideal for optimizing cash flow without depending on rigid financing avenues.</p>
+          <p><strong>Tenor:</strong> 90 days to 1 year</p>
+        </div>
+      </div>
+
+
+    </div>
+
+    <!-- DESKTOP TABS -->
+    <div class="hidden md:flex flex-col md:flex-row w-full items-baseline overflow-hidden mt-10">
+      <div class="flex md:w-2/4 items-start">
+        <div>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium active-tab w-full">Non-Convertible Debentures</button>
+          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium w-full">Commercial Papers</button>
+        </div>
+
+        <div class="w-full md:block hidden">
+          <img src={LogoShape.src} class="max-w-[350px] h-auto" />
+        </div>
+      </div>
+
+      <div class="w-full md:w-2/4 p-6">
+
+        <!-- Tab Content 1 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-100 translate-y-0">
+          <h2 class="font-semibold mb-6">Non-Convertible Debentures</h2>
+          <p class="mb-8">We provide financial solutions for mid-market enterprises.</p>
+          <p><strong>Tenor:</strong> 1 to 5 years</p>
+        </div>
+
+        <!-- Tab Content 2 -->
+        <div class="corporatetab-content bg-[#F8F8F8] p-10 border border-dashed border-[#F58220] opacity-0 -translate-y-4 hidden">
+          <h2 class="font-semibold mb-6">Commercial Papers</h2>
+          <p class="mb-8">Address short-term funding requirements by issuing commercial papers and tapping into diversified, professionally managed capital. Ideal for optimizing cash flow without depending on rigid financing avenues.</p>
+          <p><strong>Tenor:</strong> 90 days to 1 year</p>
+        </div>
+
+        
+      </div>
+    </div>
+
+  </div>
+
+<style>
+/* MOBILE ACCORDION */
+.accordion {
+  border: 1px dashed #F58220;
+  border-radius: 6px;
+}
+.acc-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+  opacity: 0;
+  border-top: 1px dashed #F58220;
+  padding: 0; /* remove all padding when closed */
+}
+.acc-content.open {
+  opacity: 1;
+  max-height: 500px;
+  padding: 1rem; /* restore padding when open */
+}
+.icon svg {
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: transform 0.35s ease;
+}
+.rotate-up svg {
+  transform: rotate(-180deg);
+}
+
+/* DESKTOP TABS */
+.corporatetab-content {
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+/* Active tab style */
+button.active-tab {
+  background: linear-gradient(32deg, rgba(0,1,138,1) 0, rgba(59,186,226,1) 100%);
+  color: white !important;
+}
+</style>
+
+<script is:inline>
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* -------------------- MOBILE ACCORDION -------------------- */
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((acc, index) => {
+    const btn = acc.querySelector(".acc-btn");
+    const content = acc.querySelector(".acc-content");
+    const icon = acc.querySelector(".icon");
+
+    // Open first by default
+    if(index === 0) {
+      content.classList.add("open");
+      icon.classList.add("rotate-up");
+    }
+
+    btn.addEventListener("click", () => {
+      const isOpen = content.classList.contains("open");
+
+      // Close all others
+      accordions.forEach((other, i) => {
+        if (i !== index) {
+          other.querySelector(".acc-content").classList.remove("open");
+          other.querySelector(".icon").classList.remove("rotate-up");
+        }
+      });
+
+      // Toggle current
+      content.classList.toggle("open");
+      icon.classList.toggle("rotate-up");
+    });
+  });
+
+  /* -------------------- DESKTOP TABS -------------------- */
+  const corptabButtons = document.querySelectorAll(".corporatetab-btn");
+  const corptabContents = document.querySelectorAll(".corporatetab-content");
+
+  corptabButtons.forEach((btn, index) => {
+    btn.addEventListener("click", () => {
+
+      corptabButtons.forEach(b => b.classList.remove("active-tab"));
+
+      corptabContents.forEach(c => {
+        c.classList.add("opacity-0", "-translate-y-4");
+        c.classList.add("hidden");
+      });
+
+      btn.classList.add("active-tab");
+
+      const activeContent = corptabContents[index];
+      activeContent.classList.remove("hidden");
+
+      setTimeout(() => {
+        activeContent.classList.remove("opacity-0", "-translate-y-4");
+        activeContent.classList.add("opacity-100", "translate-y-0");
+      }, 20);
+    });
+  });
+
+});
+</script>
