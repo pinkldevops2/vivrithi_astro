@@ -30,6 +30,9 @@ export default function AdvisorySwiper({ slides }) {
           flex-direction: column;
           height: auto !important;
         }
+        .swiper-button-next-custom:hover svg path, .swiper-button-prev-custom:hover svg path {
+    fill: transparent;
+}
       `}</style>
       {/* Navigation + Titles */}
       <div className="flex justify-end flex-col md:flex-row absolute bottom-[-85px] left-1/2 -translate-x-1/2 transform">
