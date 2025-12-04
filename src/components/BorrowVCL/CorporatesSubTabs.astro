@@ -107,12 +107,12 @@ import LogoShape from "../../../public/logowhite.svg";
     <!-- DESKTOP TABS -->
     <div class="hidden md:flex flex-col md:flex-row w-full items-start justify-between overflow-hidden mt-10 gap-5">
       <div class="flex md:w-5/12 items-start">
-        <div class="relative -left-[10px] min-w-[220px]">
-          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium active-tab block size-fit  uppercase">Term loan</button>
-          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Working capital</button>
-          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Leasing</button>
-          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Supply Chain Financing</button>
-          <button class="corporatetab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Factoring</button>
+        <div class="relative -left-[13px] min-w-[240px] flex flex-col gap-y-2">
+          <button class="corporatetab-btn py-2 px-7 text-left text-[14px] text-[#F58220] font-medium active-tab block size-fit  uppercase">Term loan</button>
+          <button class="corporatetab-btn py-2 px-7 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Working capital</button>
+          <button class="corporatetab-btn py-2 px-7 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Leasing</button>
+          <button class="corporatetab-btn py-2 px-7 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Supply Chain Financing</button>
+          <button class="corporatetab-btn py-2 px-7 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Factoring</button>
         </div>
 
         <div class="w-full md:flex justify-start hidden ">
@@ -200,7 +200,8 @@ import LogoShape from "../../../public/logowhite.svg";
   transition: opacity 0.45s ease, transform 0.45s ease;
 }
 button{
-  left:0;
+  left:-15px;
+  position: relative;
   transition: all .3s ease-in-out;
 }
 button:not(.active-tab):hover {
