@@ -10,7 +10,7 @@ import LogoShape from "../../../public/logowhite.svg";
       <h2 class="text-[28px] md:text-[35px] font-heading leading-[120%] mb-4 gradient-text w-full md:w-4/12">
         Tailored lending solutions for institutional needs
       </h2>
-      <p class="font-normal text-[17px] w-full md:w-8/12">
+      <p class="font-normal text-[17px] w-full md:w-8/12 max-w-[674px]">
        Vivriti Capital Limited empowers small and mid-sized financial institutions with financing solutions that enhance liquidity, streamline balance sheets, and support sustainable expansion. Our flexible, competitively priced offerings are crafted to meet the specific needs and challenges of today’s financial organizations.
       </p>
     </div>
@@ -79,19 +79,19 @@ import LogoShape from "../../../public/logowhite.svg";
     </div>
 
     <!-- DESKTOP TABS -->
-    <div class="hidden md:flex flex-col md:flex-row w-full items-baseline overflow-hidden mt-10">
-      <div class="flex md:w-2/4 items-start">
-        <div class="pt-8 sm:pt-0 relative -left-[10px]">
-          <button class="inst-tab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium active-tab block size-fit whitespace-nowrap">Term Loan</button>
-          <button class="inst-tab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit whitespace-nowrap">Securitisation and Direct Assignment</button>
-          <button class="inst-tab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit whitespace-nowrap">Co-lending</button>
+    <div class="hidden md:flex flex-col md:flex-row w-full items-start justify-between overflow-hidden mt-10 gap-5">
+      <div class="flex md:w-5/12 items-start">
+        <div class="pt-8 sm:pt-0 relative -left-[10px] max-w-[200px]">
+          <button class="inst-tab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium active-tab block size-fit  uppercase">Term Loan</button>
+          <button class="inst-tab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit uppercase">Securitisation and Direct Assignment</button>
+          <button class="inst-tab-btn py-3 px-4 text-left text-[14px] text-[#F58220] font-medium block size-fit  uppercase">Co-lending</button>
         </div>
-        <div class="w-full md:flex justify-end hidden">
-          <img src={LogoShape.src} class="max-w-[350px] h-auto" />
+        <div class="w-full md:flex justify-start hidden ">
+          <img src={LogoShape.src} class="max-w-[300px] w-full h-auto" />
         </div>
       </div>
 
-      <div class="w-full md:w-2/4 p-6">
+      <div class="w-full flex-1 lg:max-w-[674px] lg:min-w-[674px]">
         <!-- Tab Content 1 -->
         <div class="inst-tab-content bg-[#F8F8F8] p-10 border-dashed border-[#F58220] border opacity-100 translate-y-0">
           <h2 class="font-semibold mb-6">Term Loan</h2>
@@ -181,6 +181,7 @@ button.active-tab {
   color: white !important;
   left: 15px;
     position: relative;
+    white-space: nowrap;
 }
 </style>
 
