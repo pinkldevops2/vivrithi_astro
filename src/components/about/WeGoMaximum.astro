@@ -142,6 +142,27 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
   min-height: auto;
   max-height: 250px; /* default max height for border */
   position: relative;
+  border-right: none; /* keep only one normal border */
+  transition: max-height 0.3s ease, border 0.3s ease;
+}
+
+/* Create pseudo-element for animated left & right borders on flip */
+.banner_sub_grid li .flip-inner.auto-flipped::before {
+  content: '';
+  position: absolute;
+  left: -11px;
+  width: 100%;      /* span full width of li */
+  height: calc(100% - 50px)!important;
+  border-left: dashed 1px #F58220;
+  pointer-events: none; /* don’t block clicks */
+  z-index: 10;
+  opacity: 0;
+  animation: borderGrow 0.5s forwards;
+}
+
+@keyframes borderGrow {
+  from { opacity: 0; height: 0; }
+  to { opacity: 1; height: 100%; }
 }
 
 /* No border adjustments */
