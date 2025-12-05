@@ -36,8 +36,8 @@ import LogoShape1 from "../../../public/logowhite.svg";
               data-target="item-1"
               data-box="box-1"
             >
-              <h2 class="uppercase">Capital Raise</h2>
-              <h3 class="font-medium text-[#898989]">
+              <h2 class="uppercase text-left">Capital Raise</h2>
+              <h3 class="font-medium text-[#898989] text-right">
                 Connecting enterprises with the right investors
               </h3>
             </button>
@@ -71,7 +71,7 @@ import LogoShape1 from "../../../public/logowhite.svg";
               data-target="item-2"
               data-box="box-2"
             >
-              <h2 class="uppercase">Capital Markets</h2>
+              <h2 class="uppercase text-right">Capital Markets</h2>
               <h3 class="font-medium text-[#898989]">
                Optimising debt access and financing costs
               </h3>
@@ -276,10 +276,23 @@ import LogoShape1 from "../../../public/logowhite.svg";
   .advisoryaccordion .gradient-text{
     font-size: 14px;
   }
+  .accordion-item h2{
+    text-align: left;
+  }
+
+    .accordion-item h3{
+    text-align: right;
+  }
+  @media (max-width: 479px) {
+    .accordion-active {
+      padding: 0 30px;
+    }
+  }
 </style>
 
 <!-- JS for Toggle -->
 <script>
+  // ACCORDION TOGGLE
   document.querySelectorAll(".accordion-header").forEach((btn) => {
     btn.addEventListener("click", () => {
       const targetId = btn.dataset.target;
@@ -309,7 +322,8 @@ import LogoShape1 from "../../../public/logowhite.svg";
     });
   });
 
-   document.querySelectorAll(".accordion-item a").forEach((link) => {
+  // LINK CLICK: Scroll + Go to Slider
+  document.querySelectorAll(".accordion-item a").forEach((link) => {
     link.addEventListener("click", (e) => {
       e.preventDefault(); // Prevent default anchor behavior
 
@@ -317,6 +331,18 @@ import LogoShape1 from "../../../public/logowhite.svg";
       const targetSection = document.querySelector(".target-section");
       if (targetSection) {
         targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      // Get slider index from data attribute
+      const targetSlider = link.dataset.targetSlider;
+      if (targetSlider) {
+        // Convert slider id to index (assumes slider-1 = index 0)
+        const index = parseInt(targetSlider.split("-")[1], 10) - 1;
+
+        // Dispatch global event for Swiper to listen
+        window.dispatchEvent(
+          new CustomEvent("go-to-slide", { detail: index })
+        );
       }
     });
   });
