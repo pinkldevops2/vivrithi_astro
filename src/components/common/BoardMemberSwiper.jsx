@@ -11,7 +11,7 @@ export default function DrivingImpactSwiper({ slides }) {
   const [currentSlide, setCurrentSlide] = useState(1);
 
   return (
-    <div className="container mx-auto  relative w-full py-4 px-2">
+    <div className="container mx-auto  relative w-full py-4 px-4">
       <style>{`
         .text-description{
           min-height:50px;
