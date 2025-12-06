@@ -11,7 +11,7 @@ import LogoShape from '../../../public/Vivrithi_logo.svg';
 
     <!-- Paragraph -->
     <div data-reveal class="fade-up flex flex-col items-start  h-full justify-end gap-[30%]">
-        <h2 class="text-[35px] md:text-4xl font-heading leading-[120%] mb-4 gradient-text">
+        <h2 class="text-[28px] md:text-[35px] font-heading leading-[120%] mb-4 gradient-text">
             Vivriti Capital Limited
         </h2>
     
@@ -137,6 +137,7 @@ mid-market enterprises across India. Since inception, we have been addressing th
   left: -200%;
   transition: all .3s ease-in-out;
   z-index: -2;
+  opacity: 0;
 }
 .text-dispalyhover:hover{
   cursor: pointer;
@@ -147,6 +148,7 @@ mid-market enterprises across India. Since inception, we have been addressing th
 }
 .text-dispalyhover:hover .hover-dispaly{
   left: 0;
+  opacity: 1;
   position: relative;
   z-index: initial;
 }
