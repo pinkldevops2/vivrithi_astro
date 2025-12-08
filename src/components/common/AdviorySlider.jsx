@@ -46,13 +46,13 @@ export default function AdvisorySwiper({ slides }) {
       `}</style>
 
       {/* Navigation + Titles */}
-      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-85px] left-1/2 -translate-x-1/2 transform">
+      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-100px] md:bottom-[-85px] left-1/2 -translate-x-1/2 transform">
         <div className="flex justify-end mb-5 md:items-center items-end gap-4 md:gap-20">
           {/* Previous */}
           <div>
-            <div className="flex gap-0 md:gap-[45px] flex-col-reverse md:flex-row items-left">
+            <div className="flex gap-0 gap-y-[10px] md:gap-[45px] flex-col-reverse md:flex-row items-left">
               <div className="relative">
-                <p className="uppercase md:mt-0">Previous</p>
+                <p className="uppercase md:mt-0 text-[14px] md:text-[18px] ">Previous</p>
                 <h5 className="uppercase text-[14px] absolute left-[-90px] text-[#F58220] naviTitle md:w-[180px] text-right right-0">
                   {prevTitle}
                 </h5>
@@ -80,7 +80,7 @@ export default function AdvisorySwiper({ slides }) {
 
           {/* Next */}
           <div>
-            <div className="gap-0 md:gap-[45px] min-w-[90px] flex flex-col md:flex-row items-start">
+            <div className="gap-0 gap-y-[10px] md:gap-[45px] min-w-[90px] flex flex-col md:flex-row items-start">
               <button className="swiper-button-next-custom" aria-label="Next Slide">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                   <rect width="30" height="30" transform="translate(0 30) rotate(-90)" fill="#D9D9D9"/>
@@ -96,7 +96,7 @@ export default function AdvisorySwiper({ slides }) {
               </button>
 
               <div className="relative">
-                <p className="uppercase">Next</p>
+                <p className="uppercase text-[14px] md:text-[18px]">Next</p>
                 <h5 className="uppercase text-[14px] absolute text-[#F58220] naviTitle w-[180px] text-left">
                   {nextTitle}
                 </h5>
