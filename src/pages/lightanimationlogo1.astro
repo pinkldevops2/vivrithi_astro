@@ -1,0 +1,75 @@
+---
+---
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  svg path {
+    stroke-width: 2;
+    fill: none;
+  }
+</style>
+
+<svg id="animatedSvg" xmlns="http://www.w3.org/2000/svg" width="269" height="235" viewBox="0 0 269 235" fill="none">
+    
+    <!-- BLUE paths -->
+    <path id="p1" d="M0.495361 0.42627C0.495361 0.42627 6.86538 47.3294 18.7298 72.4263C36.9642 110.998 49.1069 125.45 83.8527 152.141C110.444 172.567 146.371 180.426 167.21 198.426C180.382 209.803 193.259 234.426 193.259 234.426" 
+          stroke="#44C8F5" stroke-dasharray="5 5"/>
+
+    <path id="p2" d="M0.495361 0.42627L96.8773 59.5691C96.8773 59.5691 185.444 113.569 198.469 167.569C205.789 197.916 193.259 234.426 193.259 234.426" 
+          stroke="#44C8F5" stroke-dasharray="5 5"/>
+
+    <!-- ORANGE paths -->
+    <path id="p3" d="M268.495 0.42627C268.495 0.42627 262.125 47.3294 250.261 72.4263C232.027 110.998 219.884 125.45 185.138 152.141C158.547 172.567 122.62 180.426 101.781 198.426C88.6091 209.803 75.7315 234.426 75.7315 234.426" 
+          stroke="#F58220" stroke-dasharray="5 5"/>
+
+    <path id="p4" d="M268.495 0.42627L172.113 59.5691C172.113 59.5691 83.5463 113.569 70.5217 167.569C63.2022 197.916 75.7315 234.426 75.7315 234.426" 
+          stroke="#F58220" stroke-dasharray="5 5"/>
+</svg>
+
+<!-- Load GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" is:client></script>
+
+<!-- Animation Script -->
+<script is:client>
+  // wait a frame to ensure the SVG is rendered
+  document.addEventListener("DOMContentLoaded", () => {
+        const paths = document.querySelectorAll("#animatedSvg path");
+
+        const tl = gsap.timeline({
+          repeat: -1,
+          repeatDelay: 0.6
+        });
+
+        paths.forEach((path, i) => {
+          const length = path.getTotalLength();
+          const originalDash = path.getAttribute("stroke-dasharray");
+
+          gsap.set(path, {
+            strokeDasharray: length + " " + length,
+            strokeDashoffset: length
+          });
+
+          tl.to(path, {
+            strokeDashoffset: 0,
+            duration: 2,
+            ease: "power2.inOut",
+          }, i * 0.4);
+
+          tl.to(path, {
+            strokeDasharray: originalDash,
+            duration: 0.2
+          });
+        });
+      });
+</script>
