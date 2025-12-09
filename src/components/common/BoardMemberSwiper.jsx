@@ -63,7 +63,7 @@ export default function DrivingImpactSwiper({ slides }) {
         centeredSlides={false}
         loop={true}
         autoplay={{
-          delay: 2500,
+          delay: 2500000,
           disableOnInteraction: false,
         }}
         onSwiper={(swiper) => (swiperRef.current = swiper)}
@@ -91,6 +91,7 @@ export default function DrivingImpactSwiper({ slides }) {
                 <div className="absolute inset-0 bg-linear-to-t from-[#00000075] to-[#6361ff00]"></div>
 
                 <div className="relative py-5 px-2 text-white flex flex-col justify-end items-center h-full">
+                  <a href={slide.link} target="_blank" rel="noopener noreferrer" className="absolute top-4 right-4"><img src="./icons/linkedin.svg" /></a>
                   <p className="text-base font-bold">{slide.title}</p>
                   <span className="text-center text-base  block mt-[5px] font-light">
                     {slide.desc}
