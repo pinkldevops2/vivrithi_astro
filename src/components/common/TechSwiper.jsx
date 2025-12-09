@@ -6,7 +6,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import LogoShape from "../../../public/Vivrithi_logo.svg";
 
-export default function DrivingImpactSwiper({ slides }) {
+export default function TechtSwiper({ slides }) {
   const swiperRef = useRef(null);
   const [currentSlide, setCurrentSlide] = useState(1);
 
@@ -21,7 +21,7 @@ export default function DrivingImpactSwiper({ slides }) {
       <div className="flex justify-end flex-col md:flex-row absolute bottom-[-45px] left-1/2 -translate-x-1/2 transform  md:relative md:left-[initial] md:translate-x-[initial] md:bottom-[initial]">
         {/* Navigation */}
        
-         <div className="flex justify-end mb-5 items-center gap-5 block md:hidden">
+         <div className="flex justify-end mb-5 items-center gap-5 md:hidden block">
           <button
             className="swiper-button-prev-custom"
             aria-label="Previous Slide"
