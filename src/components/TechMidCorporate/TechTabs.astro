@@ -2,7 +2,7 @@
 import CorporatesSubTabs from "@/components/BorrowVCL/CorporatesSubTabs.astro";
 import FinancialSubTabs from "@/components/BorrowVCL/FinancialSubTabs.astro";
 import CreadIQAbout from "./credIQaboutDetails.astro";
-import MidcorpArtemis from "./artemisaboutDetails.astro";
+import ArtemisaboutDetails from "./artemisaboutDetails.astro";
 import MidcorpCrediq from "./midcorporateCrediq.astro";
 import ArtemisKeyFeature from "./artemisKeyFeature.astro";
 import CredIQKeyFeature from "./credIQKeyFeature.astro";
@@ -61,7 +61,7 @@ import CredIQSlider from './credIQSlider.astro';
       class="borrowvcl-panel inset-0 transition-all duration-500 ease-out transform opacity-0 -translate-y-2 hidden"
     >
       <section class="pb-0 md:pt-6">
-        <MidcorpCrediq/>
+        <ArtemisaboutDetails/>
         <ArtemisSlider/>
        <ArtemisKeyFeature/>
        <ArtemisValueDelivered/>
@@ -78,7 +78,7 @@ import CredIQSlider from './credIQSlider.astro';
   }
   .tabactive {
     color: #fff !important;
-    border:0;
+  /*   border:0; */
     padding-top: 40px;
     padding-bottom: 40px;
     background: linear-gradient(
