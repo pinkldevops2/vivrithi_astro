@@ -13,9 +13,9 @@ import Filter from "../../../public/filter.svg";
 
       <div class="w-full md:w-8/12 hidden md:block">
         <div class="flex justify-start sm:justify-end">
-          <a class=" contact_cta contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition my-4 w-fit px-4 py-3">
-            <span class="uppercase text-[14px] filter">Filters</span>
-            <img src={Filter.src} alt="Vivrithi" class="w-5 h-5" />
+          <a class="fade-up contact_cta contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition my-4 w-fit px-4 py-3">
+            <span class="uppercase text-[14px]">Filters</span>
+            <!-- <img src={Filter.src} alt="Vivrithi" class="w-5 h-5" /> -->
           </a>
         </div>
       </div>
@@ -56,7 +56,7 @@ import Filter from "../../../public/filter.svg";
   <!-- Dynamic Categories List -->
  <div id="categoriesList" class="categories-list overflow-hidden transition-all duration-300 mt-10">
  
-  <ul id="categoriesUl" class="flex flex-col gap-2 px-4">
+  <ul id="categoriesUl" class="flex flex-col gap-2">
     <!-- JS will populate categories here -->
   </ul>
 </div>
@@ -102,7 +102,7 @@ import Filter from "../../../public/filter.svg";
     </div>
   </div>
 </div>
-<style is:inline>
+<style>
   .categories-list ul li a {
     padding: 15px 10px;
     position: relative;
@@ -123,11 +123,11 @@ import Filter from "../../../public/filter.svg";
     width: 100%;
   }
   .categories-list ul li {
-   /* margin: 20px 0;*/
+    margin: 20px 0;
     border-top: 1px dashed #666666;
   }
   .blog-container .blog-card {
-    padding-bottom: 0px;
+    padding-bottom: 30px;
     margin-bottom: 30px;
     border-bottom: 1px dashed #f58220;
   }
@@ -158,9 +158,6 @@ import Filter from "../../../public/filter.svg";
   border-width: 2px;
   border-style: solid;
   padding: 5px 12px;
-  }
-  .filter{
-    color:#fff!important;
   }
   @media (max-width: 639px) {
     .blog-container .blog-card:nth-last-child(2) {

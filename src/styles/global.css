@@ -21,7 +21,7 @@ body{
   padding-bottom: 37px;
 }
 .container{
-  max-width:1280px;
+  max-width:1265px;
 }
 .contact_cta{
     background: #3BBAE2;
@@ -505,7 +505,7 @@ body{
 }
 
 /* Revathi */
-@media (min-width: 1024px) and (max-width: 1280px) {
+@media (min-width: 1024px) and (max-width: 1270px) {
       .container{
         max-width:100%;
       }
