@@ -4,6 +4,7 @@ export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/common/Header.astro";
 import Footer from "../../components/common/Footer.astro";
+import FooterMobile from "../../components/common/FooterMobile.astro";
 import { GRAPHQL } from "../../config/graphql.js";
 
 const { slug } = Astro.params;
@@ -219,4 +220,5 @@ try {
   
 </style>
   <Footer />
+  <FooterMobile/>
 </Layout>
