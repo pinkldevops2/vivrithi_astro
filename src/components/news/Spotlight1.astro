@@ -72,15 +72,15 @@ import Filter from "../../../public/filter.svg";
       </svg>
     </span>
   </div>
-  <div id="topNewsList" class="categories-list overflow-hidden transition-all duration-300 px-4 mt-6"></div>
+  <div id="topNewsList" class="categories-list overflow-hidden transition-all duration-300 px-4"></div>
 </div>
       </div>
 
       <!-- FILTER BUTTON FOR MOBILE -->
       <div class="w-full md:w-8/12 block md:hidden">
         <div class="flex justify-start sm:justify-end">
-          <a class="fade-up contact_cta contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition w-fit px-4 py-3">
-            <span class="uppercase text-[14px]">Filters</span>
+          <a class="contact_cta contact_cta5 flex items-center gap-2 text-white uppercase hover:text-blue-600 transition w-fit px-4 py-3">
+            <span class="uppercase text-[14px] filter">Filters</span>
           <img src={Filter.src} alt="Vivrithi" class="w-5 h-5" /> 
           </a>
         </div>
@@ -88,7 +88,7 @@ import Filter from "../../../public/filter.svg";
 
       <!-- NEWS LIST -->
       <div class="w-full md:w-8/12">
-   <div id="news-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6 blog-container">
+   <div id="news-container" class="grid grid-cols-1 sm:grid-cols-2 md:gap-6 blog-container">
   <p class="text-gray-500">Loading news...</p>
 </div>
 
@@ -162,6 +162,9 @@ import Filter from "../../../public/filter.svg";
   .filter{
     color:#fff!important;
   }
+  #topNewsList{
+    margin-top: 30px;
+  }
   @media (max-width: 639px) {
     .blog-container .blog-card:nth-last-child(2) {
       border-bottom: 1px dashed #f58220;
@@ -192,10 +195,12 @@ import Filter from "../../../public/filter.svg";
 
   #topNewsList {
     max-height: 0;
+    margin-top: 0px; 
   }
 
   #topNewsList.active {
-    max-height: 2000px; 
+    max-height: 2000px;
+    margin-top: 25px; 
   }
 
   }
