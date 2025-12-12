@@ -4,6 +4,7 @@ export const prerender = false;
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/common/Header.astro";
 import Footer from "../../components/common/Footer.astro";
+import FooterMobile from "../../components/common/FooterMobile.astro";
 import { GRAPHQL } from "../../config/graphql.js";
 
 const { slug } = Astro.params;
@@ -169,23 +170,33 @@ try {
     </div>
   </section>
 
-  <Footer />
 
   <style>
-    .tabactive:hover {
-      color: #fff !important;
-      background: linear-gradient(312deg, rgba(59,186,226,1) 0%, rgba(0,1,138,1) 100%);
-      padding: 15px;
-    }
-    .tabactive:hover p,
-    .tabactive:hover h3 {
-      color: #fff !important;
-    }
-    .tabactive:hover svg path {
-      stroke: #fff;
-    }
-    .tabactive:hover .gradient-text{
+    .tabactive:not(hover){
+    padding-bottom: 30px;
+    transition: all .3s ease-in-out;
+  }
+  .tabactive:hover{
+    color: #fff !important;
+    background: linear-gradient(312deg, rgba(59, 186, 226, 1) 0%, rgba(0, 1, 138, 1) 100%);
+    -webkit-background-clip: initial;
+    -webkit-text-fill-color: initial;
+   /*  position: relative;
+    top: 16px; */
+    padding: 15px;
+  }
+  .tabactive:hover p, .tabactive:hover h3{
+    color: #fff !important;;
+  }
+  .tabactive:hover .gradient-text{
     -webkit-text-fill-color:initial;
   }
+  .tabactive:hover svg path{
+    stroke: #fff;
+  }
   </style>
+
+  <Footer />
+  <FooterMobile/>
+  
 </Layout>
