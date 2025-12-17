@@ -46,7 +46,14 @@ body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+.getintouch-fix {
+    position: fixed!important;
+    z-index: 2;
+    top: 130px;
+    transform: rotate(270deg);
+    padding: 10px 20px;
+    transform-origin: right bottom;
+}   
 .milestones .slick-dots {
     display: flex!important;
     width: 100%!important;

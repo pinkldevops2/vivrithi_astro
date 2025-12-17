@@ -1,6 +1,6 @@
 ---
 import Header from '../components/common/Header.astro';
-import GetInTouch from '../components/common/HomeGetInTouch.astro'
+import ContactButton from '../components/common/HomeGetInTouch.jsx';
 import BannerIntro from '../components/home/BannerIntro.astro';
 import Banner from '../components/home/Banner.astro';
 import Footer from '../components/common/Footer.astro';
@@ -52,7 +52,7 @@ const slides2 = [
 <Layout>
 	<Header />
 	<BannerIntro />
-	<GetInTouch/>
+	<ContactButton label={"Get in Touch"} href={"/"} />
 	<Banner />
 	<Transforming />
 

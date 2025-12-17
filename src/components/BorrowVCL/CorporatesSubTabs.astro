@@ -1,5 +1,6 @@
 ---
 import LogoShape from "../../../public/logowhite.svg";
+import LogoAnimation from "../../components/common/logoglow.astro";
 ---
 
 <div class="w-full md:py-[70px] py-[40px]">
@@ -116,7 +117,7 @@ import LogoShape from "../../../public/logowhite.svg";
         </div>
 
         <div class="w-full md:flex justify-start hidden ">
-          <img src={LogoShape.src} class="max-w-[300px] w-full h-auto" />
+          <LogoAnimation />
         </div>
       </div>
 
