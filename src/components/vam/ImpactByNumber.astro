@@ -135,7 +135,7 @@ under management</h3>
 document.addEventListener("DOMContentLoaded", () => {
   const bars = document.querySelectorAll(".bar");
 
-function countUp(element, target, isPercent = false, duration = 1000) {
+function countUp2(element, target, isPercent = false, duration = 1000) {
   let start = 0;
   const decimals = target % 1 !== 0 ? 1 : 0; // detect if decimal needed
   const increment = target / (duration / 16);
@@ -168,7 +168,7 @@ function countUp(element, target, isPercent = false, duration = 1000) {
           if (num) {
             const target = parseFloat(num.dataset.target);
             const isPercent = num.dataset.format === "percent";
-            countUp(num, target, isPercent);
+            countUp2(num, target, isPercent);
           }
 
           observer.unobserve(bar);
