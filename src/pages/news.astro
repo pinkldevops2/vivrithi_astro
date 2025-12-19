@@ -227,7 +227,7 @@ function renderPage(page) {
       const date = formatDate(item.date);
        const readTime = getReadingTime(item.content);
       let a =  `
-      <a href="/newsapi/${item.slug}">  <div class="blog-card border-b border-dotted pb-4 sm:pb-4 pr-4 sm:border-r last:border-b-0 last:sm:border-r-0">
+      <a href="/news/${item.slug}">  <div class="blog-card border-b border-dotted pb-4 sm:pb-4 pr-4 sm:border-r last:border-b-0 last:sm:border-r-0">
           <div class="blog_card vartical-blog flex flex-col gap-4 overflow-hidden">
             <div class="blog_image w-full shrink-0 beyond_cap image-flash-container">
               <img src="${imageUrl}" class="w-full h-auto aspect-80/57 object-cover" />
