@@ -1,6 +1,6 @@
 import LogoShape from "../../../public/Vivrithi_logo.svg";
 
-export default function ContactButton({ label = "GET IN TOUCH", href = "/", width = "" }) {
+export default function ContactButton({ label = "GET IN TOUCH", href = "/contact-us#leadgen", width = "" }) {
   return (
     <a
       href={href}

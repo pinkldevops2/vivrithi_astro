@@ -5,8 +5,10 @@ import Footer from '../components/common/Footer.astro';
 import FooterMobile from "../components/common/FooterMobile.astro";
 import Banner from '@/components/invest/banner.astro';
 import Tabs from '@/components/invest/tabs.astro';
+import ContactButton from '../components/common/HomeGetInTouch.jsx';
 ---
 <Layout>
+    <ContactButton label={"Tell Us Your Portfolio Needs"} href={"/contact-us#leadgen"} />
 <Header />
 <Banner/>
 <Tabs/>

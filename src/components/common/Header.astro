@@ -28,13 +28,26 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
     <nav id="headenvan" class="hidden lg:block relative">
       <ul class="flex space-x-2 text-gray-700 font-medium text-sm tracking-[0.3px]">
         <li><a href="/about" class="hover:text-blue-600 transition px-4 py-2">About Us</a></li>
-        <li><a href="/products" class="hover:text-blue-600 transition px-4 py-2">Borrow</a></li>
-        <li><a href="/blog" class="hover:text-blue-600 transition px-4 py-2">Invest</a></li>
+        <li class="relative group">
+  <a href="#" class="flex items-center gap-1">
+    Borrow
+    <svg class="w-3 h-3 mt-[2px]" viewBox="0 0 10 6">
+      <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  </a>
+
+  <ul class="absolute left-0 top-full mt-2 w-48 bg-white shadow-lg rounded-md
+             opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+    <li><a href="/borrowvcl" class="dropdown-link">VCL</a></li>
+    <li><a href="/borrowvam" class="dropdown-link">VAM</a></li>
+  </ul>
+</li>
+        <li><a href="/invest" class="hover:text-blue-600 transition px-4 py-2">Invest</a></li>
         <li><a href="/advisory" class="hover:text-blue-600 transition px-4 py-2">Advisory</a></li>
-        <li><a href="/group" class="hover:text-blue-600 transition px-4 py-2">Tech</a></li>
+        <li><a href="/techcolending" class="hover:text-blue-600 transition px-4 py-2">Tech</a></li>
         
         <li>
-          <a href="/contact" class="contact_cta flex items-center gap-2 text-white uppercase pw-2 mb-2">
+          <a href="/contact-us" class="contact_cta flex items-center gap-2 text-white uppercase pw-2 mb-2">
             <span data-text="Contact Us">Contact Us</span>
             <img src={LogoShape.src} class="w-5 h-5" />
           </a>
@@ -55,13 +68,34 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
   </div>
     <ul class="flex flex-col text-gray-700 font-medium text-base mt-5 px-4">
       <li><a href="/about" class="hover:text-blue-600 transition block py-2">About Us</a></li>
-      <li><a href="/products" class="hover:text-blue-600 transition block py-2">Borrow</a></li>
-      <li><a href="/blog" class="hover:text-blue-600 transition block py-2">Invest</a></li>
+      <li>
+  <button 
+    class="flex w-full items-center justify-between py-2 hover:text-blue-600 transition"
+    onclick="toggleBorrow()"
+    aria-expanded="false"
+    id="borrowBtn"
+  >
+    <span>Borrow</span>
+    <svg class="w-4 h-4 transition-transform" id="borrowIcon" viewBox="0 0 10 6">
+      <path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" fill="none"/>
+    </svg>
+  </button>
+
+  <ul 
+    id="borrowSubmenu"
+    class="ml-4 mt-1 space-y-1 hidden text-sm"
+  >
+    <li><a href="/borrowvcl" class="block py-1 hover:text-blue-600">VCL</a></li>
+    <li><a href="/borrowvam" class="block py-1 hover:text-blue-600">VAM</a></li>
+  </ul>
+</li>
+
+      <li><a href="/invest" class="hover:text-blue-600 transition block py-2">Invest</a></li>
       <li><a href="/advisory" class="hover:text-blue-600 transition block py-2">Advisory</a></li>
-      <li><a href="/group" class="hover:text-blue-600 transition block py-2">Tech</a></li>
+      <li><a href="/techcolending" class="hover:text-blue-600 transition block py-2">Tech</a></li>
 
       <li class="border-t mt-3 pt-3">
-        <a href="/contact" class="contact_cta flex justify-center items-center gap-2 text-white uppercase py-2">
+        <a href="/contact-us" class="contact_cta flex justify-center items-center gap-2 text-white uppercase py-2">
           <span data-text="Contact Us">Contact Us</span>
           <img src={LogoShape.src} class="w-5 h-5" />
         </a>
@@ -103,7 +137,7 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
   #headenvan li a.contact_cta:hover {
     transform: scale(1);
   }
-  #headenvan li:first-child a {
+  #headenvan>ul>li:first-child a {
     padding-left: 0;
   }
 
@@ -124,7 +158,10 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
   border-image: linear-gradient(90deg,rgba(0, 116, 188, 1) 0%, rgba(68, 200, 245, 0.97) 29%, rgba(245, 130, 32, 1) 59%, rgba(242, 114, 140, 1) 86%) 1;
 }
 }
-  
+  #borrowSubmenu {
+  transition: all 0.3s ease;
+}
+
 </style>
 
 <!-- SCRIPT (Astro Client) -->
@@ -162,4 +199,17 @@ import LogoShape from "../../../public/Vivrithi_logo.svg";
   menu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", closeMenu);
   });
+
+  window.toggleBorrow = function () {
+  const submenu = document.getElementById("borrowSubmenu");
+  const icon = document.getElementById("borrowIcon");
+  const btn = document.getElementById("borrowBtn");
+
+  const isOpen = !submenu.classList.contains("hidden");
+
+  submenu.classList.toggle("hidden");
+  icon.classList.toggle("rotate-180");
+  btn.setAttribute("aria-expanded", String(!isOpen));
+};
+
 </script>

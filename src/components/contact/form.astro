@@ -1,20 +1,21 @@
 ---
 import LogoShape from "../../../public/Vivrithi_logo.svg";
 ---
-<div class="map_background relative">
+<div class="map_background relative" id="leadgen">
     <div class="container mx-auto h-full flex flex-col md:flex-row gap-4">
         <!-- Left column (66%) -->
-        <div class="w-full md:w-2/3 p-4 flex items-end py-15">
+        <div class="w-full md:w-1/2 p-4 py-15">
+            <h2 class="text-[35px] mt-3 w-[70%] leading-[40px] font-heading gradient-text">What can we do for you</h2>
             <p>Have a question, collaboration idea, or advisory request? 
 Our team is here to guide you with expert guidance and prompt responses.
 </p>
         </div>
 
         <!-- Right column (33%) -->
-        <div class="w-full md:w-1/3 bg-gray-100 p-10 pb-18">
-            <img src={LogoShape.src} class="w-15 h-15" />
-            <h3 class="text-[35px] mt-3 w-[70%] leading-[40px]">Tell us how we can help</h3>
-            <form class="pt-17">
+        <div class="w-full md:w-1/2 p-10 pb-18">
+            <p class="text-center">Solutions designed for you.<br/>
+                <b>Start by choosing your segment</b></p>
+            <form class="pt-5">
                 <div class="form_element_1">
                     <input type="text" value="" placeholder="Name*" />
                 </div>
@@ -41,9 +42,9 @@ Our team is here to guide you with expert guidance and prompt responses.
 
 <style>
 .map_background {
-    background-image: url('/map_background.png');
     background-size: cover;
     background-position: center;
+    background-color: #F5FCFE;
 }
 .map_background input{
     height: 40px;
