@@ -94,7 +94,7 @@ export default function TechSwiper({ slides }) {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00000075] to-transparent"></div>
 
-                <div className="relative py-5 px-4 text-white flex flex-col justify-end h-full md:p-10">
+                <div className="relative py-5 px-6 md:px-2 text-white flex flex-col justify-end items-start h-full md:p-10">
                   <p className="text-base font-semibold uppercase">
                     {slide.title}
                   </p>
