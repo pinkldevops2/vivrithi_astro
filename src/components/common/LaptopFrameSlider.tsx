@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 
@@ -13,13 +14,35 @@ interface LaptopFrameSliderProps {
 export default function LaptopFrameSlider({
   laptopImage,
   slides = [],
-  sliderId = "laptop", // UNIQUE ID per instance
+  sliderId = "laptop",
 }: LaptopFrameSliderProps) {
+  const swiperRef = useRef<any>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+
   const nextClass = `${sliderId}-next`;
   const prevClass = `${sliderId}-prev`;
 
+  // 🔥 Handle tab visibility automatically
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && swiperRef.current) {
+          swiperRef.current.update();
+          swiperRef.current.autoplay?.start();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    observer.observe(wrapperRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="laptop-frame-wrapper">
+    <div className="laptop-frame-wrapper" ref={wrapperRef}>
       {/* Laptop Image */}
       <img
         src={laptopImage}
@@ -33,10 +56,19 @@ export default function LaptopFrameSlider({
           modules={[Navigation, Autoplay]}
           slidesPerView={1}
           loop
-          autoplay={{ delay: 2500, disableOnInteraction: false }}
+          observer
+          observeParents
+          resizeObserver
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           navigation={{
             nextEl: `.${nextClass}`,
             prevEl: `.${prevClass}`,
+          }}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
           }}
           className="laptop-swiper"
         >
