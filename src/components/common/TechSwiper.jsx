@@ -32,7 +32,7 @@ export default function TechSwiper({ slides }) {
       `}</style>
 
       {/* Navigation (Mobile) */}
-      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-45px] left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 md:bottom-auto">
+      <div className="flex justify-end flex-col md:flex-row absolute bottom-[-70px] md:bottom-[-45px] left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0 md:bottom-auto">
         <div className="flex justify-end mb-5 items-center gap-5 md:hidden">
           <button
             className="swiper-button-prev-custom"
@@ -94,7 +94,7 @@ export default function TechSwiper({ slides }) {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-[#00000075] to-transparent"></div>
 
-                <div className="relative py-5 px-6 md:px-2 text-white flex flex-col justify-end items-start h-full md:p-10">
+                <div className="relative py-5 px-6 md:px-8 text-white flex flex-col justify-end items-start h-full md:p-10">
                   <p className="text-base font-semibold uppercase">
                     {slide.title}
                   </p>
