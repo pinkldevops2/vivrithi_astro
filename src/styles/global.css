@@ -56,7 +56,7 @@ button{
 }
 .getintouch-fix {
     position: fixed!important;
-    z-index: 2;
+    z-index: 999;
     top: 130px;
     transform: rotate(270deg);
     padding: 10px 20px;
