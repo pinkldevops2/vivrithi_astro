@@ -861,3 +861,6 @@ button.techtabs-btn:not(.tabactive) {
     height: 46px;
     width: 49px;
 }
+.blog_details p{
+  margin-bottom: 17px;
+}
