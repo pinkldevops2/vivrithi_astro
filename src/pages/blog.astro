@@ -110,11 +110,12 @@ document.addEventListener("DOMContentLoaded", () => {
  function renderCategories(edges = []) {
     if (!categoriesUl) return;
 
-    let html = `
-  <li class="py-2 cursor-pointer rounded mb-2 ${activeCategory === "all" ? "bg-gradient-to-r " : ""}" data-slug="all">
-    <a>All</a>
-  </li>
-`;
+//     let html = `
+//   <li class="py-2 cursor-pointer rounded mb-2 ${activeCategory === "all" ? "bg-gradient-to-r " : ""}" data-slug="all">
+//     <a>All</a>
+//   </li>
+// `;
+let html ='';
 
 edges.forEach(({ node }) => {
   html += `

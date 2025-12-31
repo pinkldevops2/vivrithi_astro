@@ -14,6 +14,9 @@ const newsQuery = `{
       slug
       content
       date
+       news {
+        link
+            }
       featuredImage { node { sourceUrl } }
       newsCategories { nodes { id name slug } }
     }
@@ -69,9 +72,17 @@ from milestones to<br/>market moves
   <div class="slick-slider">
     {latestNews.map((post) => {
       const readTime = getReadingTime(post.content);
+        const hasCustomLink = !!post.news?.link;
+      const newsUrl = hasCustomLink ? post.news.link : `/news/${post.slug}`;
+
       return (
         <div class="slide" key={post.id}>
-          <a href={`/news/${post.slug}`}>
+          <a
+  href={newsUrl}
+  {...(hasCustomLink
+    ? { target: "_blank", rel: "noopener noreferrer" }
+    : {})}
+>
           <img src={post.featuredImage?.node?.sourceUrl || "/blo_thumb.png"} alt={post.title} />
           <div class="overlay">
             <span class="uppercase text-[18px]">{post.newsCategories?.nodes?.[0]?.name || "Uncategorized"}</span>
