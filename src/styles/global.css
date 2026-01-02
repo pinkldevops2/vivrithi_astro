@@ -864,3 +864,17 @@ button.techtabs-btn:not(.tabactive) {
 .blog_details p{
   margin-bottom: 17px;
 }
+
+.list_of_files li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+ 
+.list_of_files li a.contact_cta{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
