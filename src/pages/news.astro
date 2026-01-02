@@ -74,7 +74,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderTopNews(news = []) {
     if (!topNewsContainer) return;
 
-    const topNews = news.slice(0, 3); // top 3 news
+  const mediaReleaseNews = news.filter(item =>
+    item.newsCategories?.nodes?.some(cat => cat.slug === "media-release")
+  );
+
+  
+  const topNews = mediaReleaseNews.slice(0, 3);
+  //  const topNews = news.slice(0, 3); // top 3 news
     topNewsContainer.innerHTML = topNews
       .map((item, index) => {
         const date = formatDate(item.date);
@@ -370,21 +376,21 @@ function renderPagination() {
       //   news { nodes { id title slug content date featuredImage { node { sourceUrl } } newsCategories { nodes { id name slug } } } }
       // }`;
       const newsQuery = `{
-  news(first: 1000) {
-    nodes {
-      id
-      title
-      slug
-      content
-      date
-        news {
-        link
-            }
-      featuredImage { node { sourceUrl } }
-      newsCategories { nodes { id name slug } }
-    }
-  }
-}`;
+      news(first: 1000) {
+        nodes {
+          id
+          title
+          slug
+          content
+          date
+            news {
+            link
+                }
+          featuredImage { node { sourceUrl } }
+          newsCategories { nodes { id name slug } }
+        }
+      }
+    }`;
 
       const categoryQuery = `{
         newsCategories { edges { node { id name slug } } }
