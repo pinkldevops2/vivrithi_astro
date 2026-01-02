@@ -872,9 +872,11 @@ button.techtabs-btn:not(.tabactive) {
     margin-bottom: 20px;
 }
  
-.list_of_files li a.contact_cta{
-    display: flex;
+.list_of_files li a.contact_cta {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
+    display: flex;
+    font-size: 14px;
+    padding: 5px 35px;
 }
