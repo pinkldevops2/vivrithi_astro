@@ -153,9 +153,15 @@ document.addEventListener("DOMContentLoaded", () => {
  let html ='';
 
 edges.forEach(({ node }) => {
+  const isActive = activeCategory === node.slug;
   html += `
-    <li class="py-2 cursor-pointer mb-2 ${activeCategory === node.slug ? "bg-gradient-to-r" : ""}" data-slug="${node.slug}">
-      <a>${node.name}</a>
+     <li class="py-2 cursor-pointer mb-2"  data-slug="${node.slug}">
+      <a style="display:block;width:100%;padding:10px;
+          ${
+            isActive
+              ? 'background:linear-gradient(212deg, rgba(59,186,226,1) 0%, rgba(0,1,138,1) 100%); color:#fff;'
+              : 'background:transparent; color:#000;'
+          }">${node.name}</a>
     </li>
   `;
 });
@@ -167,8 +173,10 @@ edges.forEach(({ node }) => {
         const slug = li.dataset.slug;
         activeCategory = slug;
 
-        categoriesUl.querySelectorAll("li").forEach((x) => x.classList.remove("bg-gradient-to-r"));
-        li.classList.add("bg-gradient-to-r");
+        renderCategories(edges); 
+
+        // categoriesUl.querySelectorAll("li").forEach((x) => x.classList.remove("bg-gradient-to-r"));
+        // li.classList.add("bg-gradient-to-r");
 
         filteredData = newsData.filter((n) => {
           if (!slug || slug === "all") return true;
